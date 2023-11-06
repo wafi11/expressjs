@@ -1,13 +1,14 @@
-
+const { Connectiontime } = require('./connection')
 const express = require('express')
 const app = express()
 const port = 1104
 const bodyParser = require('body-parser')
 
+
 app.use(bodyParser.json())
 
 app.get('/',(req,res) => {
-    res.send('hello world')
+    res.send(Connectiontime)
 })
 app.get('/hello',(req,res) => {
     console.log({ infoParam : req.query.umur});
@@ -31,3 +32,4 @@ app.delete ('/login',(req,res) => {
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`);
 })
+
